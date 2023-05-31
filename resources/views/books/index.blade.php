@@ -13,13 +13,14 @@
             <div class="col-md-6 p-5">
                 <h5 class="my-5">{{$book->title}}</h5>
                 <p class="my-5">{{$book->description}}</p>
-                <p>Author name: {{$book->author_name}}</p>
+                <p>Author name: <a href="/authors">{{$book->author_name}}</a></p>
+                <p>Category: {{$book->category_name}}</p>
                 <a href="/books/{{$book->id}}" class="btn btn-primary">Details</a>
             </div>  
             </div>
         </div>
         @endforeach
-         {{-- {{$books->links()}} --}}
+        
     @else
         <p>NO Post has found</p>
     @endif

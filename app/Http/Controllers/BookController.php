@@ -14,7 +14,9 @@ class BookController extends Controller
     public function index()
     {
         // $books = book_tbl::orderBy('created_at', 'desc')->paginate(10); //fetching data with each a page
-        $books = book_tbl::join('author_tbls', 'author_tbls.id', '=', 'book_tbls.author_id')->get();
+        $books = book_tbl::join('author_tbls', 'author_tbls.id', '=', 'book_tbls.author_id')
+            ->join('categories', 'categories.id', '=', 'book_tbls.category_id')
+            ->get();
 
         return view('books.index', compact('books'));
     }
@@ -42,6 +44,8 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
+        $books = book_tbl::join('author_tbls', 'author_tbls.id', '=', 'book_tbls.author_id')->get();
+
         $books = book_tbl::find($id);
         return view('books.show', compact('books'));
     }

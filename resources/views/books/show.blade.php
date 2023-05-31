@@ -9,12 +9,11 @@
     </div>
     <div>
         <p>{{$books->description}}</p>
-        <p>Author name: <a href="/authors/{{$books->author_id}}">{{$books->author_name}}</a></p>
+        <p>Author name: <a href="/authors/{{$books->author_id}}">{{$books->author_bio}}</a></p>
     </div>
     <a href="/books/{{$books->id}}/edit" class="btn btn-dark">Edit</a>
-    <p>{{$books->author_name}}</p>
-    <hr>
 
+    <hr>
     <form action="{{route('books.destroy',$books->id)}}", method="POST">
         @csrf
         @method('DELETE')
