@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\author_tbl;
 use Illuminate\Http\Request;
 
-class AuthorController extends Controller
+class AuthorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('authors.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class AuthorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(author_tbl $author)
+    public function show(string $id)
     {
         //
     }
@@ -43,15 +43,15 @@ class AuthorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(author_tbl $author)
+    public function edit(string $id)
     {
-        //
+        return view('/authors.edit')->with(['blog' => author_tbl::findOrFail($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, author_tbl $author)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +59,7 @@ class AuthorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(author_tbl $author)
+    public function destroy(string $id)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\AuthorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,5 @@ use App\Http\Controllers\AuthorController;
 
 Route::get('/', [BookController::class, 'index']);
 Route::resource('/books', BookController::class);
-Route::resource('/authors', AuthorController::class);
+Route::resource('/authors', AuthorsController::class);
+Route::resource('/login', LoginController::class);

@@ -1,25 +1,27 @@
 @extends('layouts.layout')
 
 @section('content')
+    @foreach ($books as $book)
     <a href="\books" class="btn btn-light">Go back</a><br>
-    
-    <h1>{{$books->title}}</h1>
-    <div style="width: 18rem">
-        <img src="{{$books->book_img}}"  alt="Book Image">
+    <h1>{{ $book->title }}</h1>
+    <div class="img" style="width:18rem">
+        <img src="{{asset($book->book_img)}}" class="card-img-top" alt="...">
     </div>
-    <div>
-        <p>{{$books->description}}</p>
-        <p>Author name: <a href="/authors/{{$books->author_id}}">{{$books->author_bio}}</a></p>
-    </div>
-    <a href="/books/{{$books->id}}/edit" class="btn btn-dark">Edit</a>
+    <p>Book description: {{ $book->description }}</p>
+    <p>Aurthors Name: {{ $book->author_name }}</p>
+    <p>Category: {{ $book->category_name }}</p>
 
-    <hr>
-    <form action="{{route('books.destroy',$books->id)}}", method="POST">
+    <a href="/books/{{$book->id}}/edit" class="btn btn-dark">Edit</a>
+     <hr>
+    <form action="{{route('books.destroy',$book->id)}}", method="POST">
         @csrf
         @method('DELETE')
         <div class="col-xs-12 col-md-12 col-sm-12">
             <button class="btn btn-primary" type="submit">Delete</button>
         </div>
     </form>
+@endforeach
+    
+
 @endsection
 

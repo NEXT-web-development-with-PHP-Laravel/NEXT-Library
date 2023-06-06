@@ -13,8 +13,10 @@
             <div class="col-md-6 p-5">
                 <h5 class="my-5">{{$author->author_name}}</h5>
                 <p class="my-5">{{$author->author_bio}}</p>
+                <a href="">Edit</a>
             </div>  
             </div>
+             
         </div>
         @endforeach
          {{$authors->links()}}

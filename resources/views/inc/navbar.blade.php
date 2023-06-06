@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">Nav</a>
+    <a class="navbar-brand" href="\books">NEXT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,8 +17,10 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="\books">Home</a>
         <a class="nav-link" href="\authors">Authors</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" href="#">Category</a>
+        <a class="nav-link" href="/books/create">Add new Book</a>
+        <a class="nav-link" href="/authors/create">Add new Author </a>
+        <a class="nav-link" href="/login">Log in</a>
       </div>
     </div>
   </div>
